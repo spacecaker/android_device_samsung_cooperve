@@ -43,9 +43,6 @@ TARGET_RECOVERY_FSTAB := device/samsung/cooperve/recovery/recovery.fstab
 # Prebuilt kernel
 TARGET_PREBUILT_KERNEL := device/samsung/cooperve/prebuilt/kernel
 
-## Assert
-TARGET_OTA_ASSERT_DEVICE := cooperve,GT-S5830i
-
 # Kernel defines
 BOARD_NAND_PAGE_SIZE := 4096 -s 128
 BOARD_KERNEL_BASE := 0x81600000

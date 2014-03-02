@@ -16,11 +16,9 @@
 $(call inherit-product, device/samsung/bcm21553-common/common.mk)
 $(call inherit-product, vendor/samsung/cooperve/vendor.mk)
 
-# Including GApps
-$(call inherit-product, vendor/google/tiny.mk)
-
 # Add device package overlay
 DEVICE_PACKAGE_OVERLAYS += device/samsung/cooperve/overlay
+PRODUCT_PACKAGE_OVERLAYS += vendor/cyanogen/overlay/mdpi
 
 # Kernel modules
 #PRODUCT_COPY_FILES += \
@@ -37,34 +35,6 @@ PRODUCT_AAPT_PREF_CONFIG := ldpi mdpi
 # Torch
 PRODUCT_PACKAGES += \
     Torch
-
-## MDPI assets
-PRODUCT_AAPT_PREF_CONFIG := mdpi
-
-## New BRCM Sources Config
-PRODUCT_PROPERTY_OVERRIDES := \
-    ro.ril.hsxpa=1 \
-    ro.ril.gprsclass=10
-
-## New BRCM Sources Config
-PRODUCT_COPY_FILES := \
-    development/data/etc/apns-conf.xml:system/etc/apns-conf.xml \
-    development/data/etc/vold.conf:system/etc/vold.conf \
-    development/tools/emulator/system/camera/media_profiles.xml:system/etc/media_profiles.xml \
-	brcm_usrlib/dag/vmcsx/egl.cfg:system/lib/egl/egl.cfg \
-
-## New BRCM Sources Config
-PRODUCT_PACKAGES := \
-    audio.primary.goldfish \
-	libGLES_hgl
-
-# Arabic languages
-$(call inherit-product, build/target/product/locales_full.mk)
-
-# Rom Manager
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.rommanager.developerid=spacecaker \
-    ro.modversion=aosp-ics_spacecaker_$(shell date +"%d.%m.%y-%s")
 
 # Prebuilt Kernel - DELETE from the package
 ifeq ($(TARGET_PREBUILT_KERNEL),)
