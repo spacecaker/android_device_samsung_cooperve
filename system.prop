@@ -14,11 +14,6 @@ media.stagefright.enable-meta=true
 media.stagefright.enable-scan=true
 media.stagefright.enable-record=true
 
-## Qualcomm
-debug.qctwa.statusbar=1
-debug.qctwa.preservebuf=1
-com.qc.hardware=true
-
 ## QVGA (View configuration)
 view.fading_edge_length=8
 view.touch_slop=15
