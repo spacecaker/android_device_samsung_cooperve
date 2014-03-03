@@ -15,7 +15,8 @@
 # Inherit products
 $(call inherit-product, device/samsung/bcm21553-common/common.mk)
 $(call inherit-product, vendor/samsung/cooperve/vendor.mk)
-
+# Using our vendor (Superuser, hosts file and APNS)
+$(call inherit-product, vendor/mmb/vendor_blobs.mk)
 # Including GApps
 $(call inherit-product, vendor/google/tiny.mk)
 
